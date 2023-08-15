@@ -1,7 +1,10 @@
 //my contact.dart
+
+import 'package:demo_app/widgets/contact_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'widgets/social_widgets_Icon.dart';
+
 class MyContacts extends StatelessWidget {
   MyContacts({super.key});
   Map<String, String> ListIconAndUrl = {
@@ -68,21 +71,7 @@ class MyContacts extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3),
-                itemCount: ListIconAndUrl.length ,
-                itemBuilder: (mycontext, index) {
-                final entry = ListIconAndUrl.entries.elementAt(index);
-                  return SocialMediaIcon(
-                    socialMediaName: entry.key,
-                    socialMediaUrlName: entry.value,
-                  );
-                },
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                padding: EdgeInsets.all(20),
-              ),
+              Contacts_Grid(ListIconAndUrl: ListIconAndUrl),
             ],
           ),
         ),
@@ -90,3 +79,4 @@ class MyContacts extends StatelessWidget {
     );
   }
 }
+

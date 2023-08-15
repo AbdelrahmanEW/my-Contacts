@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'My_Conatact.dart';
 
-void main() {
+void main() { 
   runApp(const MyApp());
 }
 
